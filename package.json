@@ -1,10 +1,13 @@
 {
   "name": "up-version",
-  "version": "0.0.1",
-  "description": "update package.json version field",
+  "version": "0.0.7",
+  "description": "update package.json version",
   "repository": {
     "url": "https://github.com/AepKill/up-version",
     "type": "git"
+  },
+  "engines": {
+    "node": ">=4.0.0"
   },
   "bin": {
     "upv": "./bin/upv"
@@ -32,6 +35,8 @@
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^19.2.2",
+    "@types/yargs": "^6.6.0",
+    "@types/node": "^7.0.16",
     "pre-commit": "^1.2.2",
     "ts-jest": "^19.0.10",
     "tslint": "^5.1.0",
@@ -51,8 +56,6 @@
     ]
   },
   "dependencies": {
-    "@types/yargs": "^6.6.0",
-    "@types/node": "^7.0.16",
     "yargs": "^8.0.1"
   }
 }

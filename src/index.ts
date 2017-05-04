@@ -3,11 +3,18 @@ import { upVersion } from './utils';
 import { writeFileSync } from 'fs';
 import indent from './utils/indent';
 
-console.log(`up-version: ${packJsonPath}`);
+export function upPackVersionAndShowPath(path = packJsonPath) {
+  console.log(`up-version: ${path}`);
+  upPackVersion(path);
+}
 
-// tslint:disable-next-line:no-var-requires
-const packageJson: { version?: string } = require(packJsonPath);
+export default function upPackVersion(path = packJsonPath) {
 
-packageJson.version = upVersion(packageJson.version || '0.0.0');
+  // tslint:disable-next-line:no-var-requires
+  const packageJson: { version?: string } = require(path);
 
-writeFileSync(packJsonPath, JSON.stringify(packageJson, null, indent(packJsonPath)));
+  packageJson.version = upVersion(packageJson.version || '0.0.0');
+
+  writeFileSync(path, JSON.stringify(packageJson, null, indent(path)));
+
+}
