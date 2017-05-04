@@ -1,6 +1,6 @@
 {
   "name": "up-version",
-  "version": "0.0.8",
+  "version": "0.0.10",
   "description": "update package.json version",
   "repository": {
     "url": "https://github.com/AepKill/up-version",
@@ -56,6 +56,8 @@
     ]
   },
   "dependencies": {
+    "cross-spawn": "^5.1.0",
+    "execa": "^0.6.3",
     "yargs": "^8.0.1"
   }
 }

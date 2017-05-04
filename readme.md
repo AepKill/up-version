@@ -1,6 +1,6 @@
 # UP-VERSION
 
-quick update you package version.
+quick update package version.
 
 
 

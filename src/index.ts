@@ -2,7 +2,8 @@ import { packJsonPath, afterRun, beforeRun } from './args';
 import { upVersion } from './utils';
 import { writeFileSync } from 'fs';
 import indent from './utils/indent';
-import { execSync } from 'child_process';
+// tslint:disable-next-line:no-var-requires
+const spawn = require('cross-spawn');
 
 export function upPackVersionAndShowPath(path = packJsonPath) {
   console.log(`up-version: ${path}`);
@@ -12,7 +13,7 @@ export function upPackVersionAndShowPath(path = packJsonPath) {
 export default function upPackVersion(path = packJsonPath) {
 
   if (beforeRun) {
-    console.log(execSync(`npm run ${beforeRun}`, { encoding: 'utf8' }));
+    spawn.sync(`npm`, ['run', beforeRun], { stdio: 'inherit' });
   }
 
   // tslint:disable-next-line:no-var-requires
@@ -23,7 +24,7 @@ export default function upPackVersion(path = packJsonPath) {
   writeFileSync(path, JSON.stringify(packageJson, null, indent(path)));
 
   if (afterRun) {
-    console.log(execSync(`npm run ${afterRun}`, { encoding: 'utf8' }));
+    spawn.sync(`npm`, ['run', afterRun], { stdio: 'inherit' });
   }
 
 }
