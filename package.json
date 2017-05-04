@@ -1,0 +1,58 @@
+{
+  "name": "up-version",
+  "version": "0.0.1",
+  "description": "update package.json version field",
+  "repository": {
+    "url": "https://github.com/AepKill/up-version",
+    "type": "git"
+  },
+  "bin": {
+    "upv": "./bin/upv"
+  },
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "build": "node ./node_modules/typescript/bin/tsc",
+    "test": "jest",
+    "lint": "node ./node_modules/tslint/bin/tslint -p tsconfig.json --type-check"
+  },
+  "keywords": [
+    "update",
+    "version",
+    "package.json"
+  ],
+  "files": [
+    "lib",
+    "bin"
+  ],
+  "author": {
+    "name": "aepkill",
+    "email": "a@aepkill.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^19.2.2",
+    "pre-commit": "^1.2.2",
+    "ts-jest": "^19.0.10",
+    "tslint": "^5.1.0",
+    "typescript": "^2.3.2"
+  },
+  "pre-commit": [],
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "/__test__/.*\\.test\\.tsx?$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ]
+  },
+  "dependencies": {
+    "@types/yargs": "^6.6.0",
+    "@types/node": "^7.0.16",
+    "yargs": "^8.0.1"
+  }
+}
