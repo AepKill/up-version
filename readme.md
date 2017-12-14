@@ -1,3 +1,5 @@
+Tips: maybe you can use `npm version` command replace this tool
+
 # UP-VERSION
 
 quick update package version.
