@@ -1,4 +1,4 @@
-Tips: maybe you can use `npm version` command replace this tool
+Tips: maybe you can use `npm version` command replace this tool.
 
 # UP-VERSION
 
